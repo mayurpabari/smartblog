@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div class="rows">
+<div class="col-md-6" style="width:50%;margin:0 auto;">
+	{% if instance.image %}
+	<img src="{{ instance.image.url }}" style="width:100%" />
+	{% endif %}
+<h1>{{ title }}<small>{{ instance.timestamp }}</small></h1>
+<p><b>Author:</b>{{ instance.user }} </p>
+{{ instance.title }}<br>
+{{ instance.content }}<br>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>
